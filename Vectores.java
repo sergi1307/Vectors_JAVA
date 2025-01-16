@@ -115,4 +115,19 @@ public class Vectores {
         media = suma / vector.length;
         System.out.println("La media de todos los valores introducidos es: " + media);
     }
+
+    /**
+     * Crea un programa que pida dos valores enteros N y M, luego cree un array de tamaño N, escriba
+     * M en todas sus posiciones y lo muestre por pantalla.
+     */
+    public static void vector6() {
+        int n = Leer.leerEntero("Introduzca la longitud de la array: "), m = Leer.leerEntero("Introduzca otro valor numérico: ");
+        int[] vector = new int[n];
+
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = m;
+        }
+
+        System.out.println(vector);
+    }
 }
