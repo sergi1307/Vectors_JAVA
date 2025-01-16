@@ -18,6 +18,10 @@ public class Main {
                 Vectores.vector1();
             } else if(opc == 2) {
                 Vectores.vector2();
+            } else if(opc == 3) {
+                Vectores.vector3();
+            } else if(opc == 4) {
+                Vectores.vector4();
             }
         } while (opc != 0);
 
