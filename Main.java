@@ -22,6 +22,8 @@ public class Main {
                 Vectores.vector3();
             } else if(opc == 4) {
                 Vectores.vector4();
+            } else if(opc == 5) {
+                Vectores.vector5();
             }
         } while (opc != 0);
 

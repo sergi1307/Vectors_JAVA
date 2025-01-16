@@ -95,4 +95,12 @@ public class Vectores {
         System.out.println("Los 100 primeros números pares son: " + Arrays.toString(vector));
         System.out.println("La suma de los 30 últimos da: " + suma);
     }
+
+    /**
+     * Crea un programa que pida veinte números reales por teclado, los almacene en un array y luego
+     * lo recorra para calcular y mostrar la media: (suma de valores) / nº de valores.
+     */
+    public static void vector5() {
+
+    }
 }
