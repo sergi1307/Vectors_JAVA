@@ -101,6 +101,18 @@ public class Vectores {
      * lo recorra para calcular y mostrar la media: (suma de valores) / nº de valores.
      */
     public static void vector5() {
+        int[] vector = new int[20];
+        int suma = 0, media;
 
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = Leer.leerEntero("Introduzca un número: ");
+        }
+
+        for (int j : vector) {
+            suma += j;
+        }
+
+        media = suma / vector.length;
+        System.out.println("La media de todos los valores introducidos es: " + media);
     }
 }

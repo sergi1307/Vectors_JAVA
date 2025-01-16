@@ -11,6 +11,11 @@ public class Main {
             System.out.println("3 - Vectores 3");
             System.out.println("4 - Vectores 4");
             System.out.println("5 - Vectores 5");
+            System.out.println("6 - Vectores 6");
+            System.out.println("7 - Vectores 7");
+            System.out.println("8 - Vectores 8");
+            System.out.println("9 - Vectores 9");
+            System.out.println("10 - Vectores 10");
 
             opc = Leer.leerEntero("Que quiere hacer? ");
 
