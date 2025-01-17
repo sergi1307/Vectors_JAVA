@@ -147,4 +147,51 @@ public class Vectores {
         }
         System.out.println(Arrays.toString(vector));
     }
+
+    /**
+     * Crea un programa que cree un array de 10 enteros y luego muestre el siguiente menú con distntas
+     * opciones:
+     * a. Mostrar valores
+     * b. Introducir valor
+     * c. Salir
+     * La opción ‘a’ mostrará todos los valores por pantalla. La opción ‘b’ pedirá un valor V y una
+     * posición P, luego escribirá V en la posición P del array. El menú se repetirá indefinidamente hasta
+     * que el usuario elija la opción ‘c’ que terminará el programa.
+     */
+    public static void vector8() {
+        int[] numeros = new int[10];
+        int v, p;
+        boolean permiso = false;
+        String opc;
+
+        do {
+            System.out.println("A. Mostrar Valores.");
+            System.out.println("B. Introducir un valor y posición.");
+            System.out.println("C. Salir.");
+
+            opc = Leer.leerTexto("¿Qué quiere hacer? ").toUpperCase();
+
+            if (opc.equals("A")) {
+
+                for (int numero : numeros) {
+                    if (numero > 1) {
+                        permiso = true;
+                        break;
+                    }
+                }
+
+                if (permiso) {
+                    System.out.println("Los valores son: " + Arrays.toString(numeros));
+                }
+
+            } else if (opc.equals("B")) {
+
+                v = Leer.leerEntero("Introduce un valor: ");
+                p = Leer.leerEntero("Introduce una posición: ");
+
+                numeros[p] = v;
+
+            } else System.out.println("Valor introducido no válido.");
+        } while (!opc.equals("C"));
+    }
 }
