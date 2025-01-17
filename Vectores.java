@@ -194,4 +194,30 @@ public class Vectores {
             } else System.out.println("Valor introducido no válido.");
         } while (!opc.equals("C"));
     }
+
+    /**
+     * Crea un programa que cree un array de enteros de tamaño 30 y lo rellene con valores enteros
+     * aleatorios entre 1 y 10 (utiliza 1 + Math.random()*10). Luego pedirá un valor N y mostrará cuántas
+     * veces aparece en total y en qué posiciones del array.
+     */
+    public static void vector9() {
+        int[] numeros = new int[30];
+        double numAleatorio;
+        int n, v = 0;
+
+        for (int i = 0; i < numeros.length; i++) {
+            numAleatorio = 1 + Math.random() * 10;
+            numeros[i] = (int) numAleatorio;
+        }
+
+        n = Leer.leerEntero("Introduzca un número del 1 al 10 para buscarlo por la array: ");
+
+        for (int i = 0; i < numeros.length; i++) {
+            if (n == numeros[i]) {
+                v++;
+                System.out.println("Se ha encontrado en la posición: " + i + ".");
+            }
+        }
+        System.out.println("El número " + n + " ha aparecido: " + v +  " veces.");
+    }
 }
