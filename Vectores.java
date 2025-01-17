@@ -130,4 +130,21 @@ public class Vectores {
 
         System.out.println(vector);
     }
+
+    /**
+     * Crea un programa que cree un array de enteros e introduzca la siguiente secuencia de valores: 1,
+     * 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, etc. hasta introducir 10 diez veces, y luego la muestre por pantalla.
+     */
+    public static void vector7() {
+        int[] vector = new int[55];
+        int iteraciones = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            for (int x = 0; x < i; x++) {
+                vector[iteraciones] = i;
+                iteraciones++;
+            }
+        }
+        System.out.println(Arrays.toString(vector));
+    }
 }
