@@ -220,4 +220,23 @@ public class Vectores {
         }
         System.out.println("El número " + n + " ha aparecido: " + v +  " veces.");
     }
+
+    /**
+     * Crea un programa que cree dos arrays de enteros de tamaño 100. Luego introducirá en el primer
+     * array todos los valores del 1 al 100. Por último, deberá copiar todos los valores del primer array
+     * al segundo array en orden inverso, y mostrar ambos por pantalla.
+     */
+    public static void vector10() {
+        int[] vector1 = new int[100];
+        int[] vector2 = new int[100];
+
+        for (int i = 0; i < vector1.length; i++) {
+            vector1[i] = i + 1;
+        }
+        for (int x = 99; x >= 0; x--) {
+            vector2[x] = vector1[99 - x];
+        }
+        System.out.println(Arrays.toString(vector1));
+        System.out.println(Arrays.toString(vector2));
+    }
 }

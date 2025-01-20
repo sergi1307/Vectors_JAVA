@@ -37,6 +37,8 @@ public class Main {
                 Vectores.vector8();
             } else if(opc == 9) {
                 Vectores.vector9();
+            } else if(opc == 10) {
+                Vectores.vector10();
             }
         } while (opc != 0);
 
