@@ -274,6 +274,21 @@ public class Vectores {
      * orden descendente(de la más alta a la más baja).
      */
     public static void vector12() {
+        int[] puntuaciones = new int[8];
 
+        System.out.println("Introduce las puntuaciones de los 8 usuarios.");
+        for (int i = 0; i < puntuaciones.length; i++) {
+            puntuaciones[i] = Leer.leerEntero("Introduce la posición del jugador " + (i + 1) + ": ");
+
+            while (puntuaciones[i] < 1000 || puntuaciones[i] > 2800) {
+                puntuaciones[i] = Leer.leerEntero("Valor introducido no válido, prueba con otro: ");
+            }
+        }
+        Arrays.sort(puntuaciones);
+
+        System.out.println("Listado de puntuaciones.");
+        for (int i = puntuaciones.length - 1; i >= 0; i--) {
+            System.out.println("Jugador " + (i + 1) + " = " + puntuaciones[i]);
+        }
     }
 }
