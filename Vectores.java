@@ -239,4 +239,41 @@ public class Vectores {
         System.out.println(Arrays.toString(vector1));
         System.out.println(Arrays.toString(vector2));
     }
+
+    /**
+     * Crea un programa que permita al usuario almacenar una progresión aritmética en un array y
+     * luego mostrarla. Una progresión aritmética es una serie de números que comienza por un valor
+     * inicial VI, y continúa con incrementos de desplazamiento D. Por ejemplo, con VI=1 e D=2, la
+     * progresión sería 1, 3, 5, 7, 9… El programa solicitará al usuario VI, D y el número de valores a
+     * generar N.
+     */
+    public static void vector11() {
+        int vi, d, n;
+        int[] vector = new int[20];
+
+        vi = Leer.leerEntero("Introduzca el valor inicial: ");
+        d = Leer.leerEntero("Introduce el incremento por desplazamiento: ");
+        n = Leer.leerEntero("Introduce la cantidad de números a imprimir: ");
+
+        vector[0] = vi;
+
+        for (int i = 1; i < n; i++) {
+            vector[i] = vector[i - 1] + d;
+        }
+
+        System.out.println("Progresión aritmética: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(vector[i] + " ");
+        }
+    }
+
+    /**
+     * Crea un programa para mostrar el ranking de puntuaciones de un torneo de ajedrez con 8
+     * jugadores. Se le pedirá al usuario que introduzca las puntuaciones de todos los jugadores
+     * (habitualmente valores entre 1000 y 2800, de tipo entero) y luego muestre las puntuaciones en
+     * orden descendente(de la más alta a la más baja).
+     */
+    public static void vector12() {
+
+    }
 }

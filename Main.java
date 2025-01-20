@@ -39,6 +39,10 @@ public class Main {
                 Vectores.vector9();
             } else if(opc == 10) {
                 Vectores.vector10();
+            } else if(opc == 11) {
+                Vectores.vector11();
+            } else if(opc == 12) {
+                Vectores.vector12();
             }
         } while (opc != 0);
 
