@@ -117,7 +117,34 @@ public class Matrices {
      * Sabiendo la media total de las notas calcularemos cuántos alumnos tienen una nota inferior a la media
      * y cuántos tienen una nota superior.
      */
-    public static void matrices5() {}
+    public static void matrices5() {
+        int[][] notas = new int[5][4];
+        int[] media = new int[5];
+        int nota, maxima = 0, minima = 10;
+        boolean diez, cero;
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 4; j++) {
+                do {
+                    nota = Lectura.leerEntero("Introduzca la nota nº: " + (j + 1) + " al alumno nº " + (i + 1) + ": ");
+                    notas[i][j] = nota;
+                } while (nota < 0 || nota > 10);
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (notas[i][j] > maxima) {
+                    maxima = notas[i][j];
+                }
+                if (notas[i][j] < minima) {
+                    maxima = notas[i][j];
+                }
+            }
+            System.out.println("La nota máxima del alumno: " + (i + 1) + " es: " + maxima + ".");
+            System.out.println("La nota mínima del alumno: " + (i + 1) + " es: " + minima + ".");
+        }
+    }
 
     /**
      * Crear un programa para registrar sueldos de hombres y mujeres de una empresa y detectar si
