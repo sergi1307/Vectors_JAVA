@@ -29,7 +29,22 @@ public class Matrices {
      * Crea un programa que cree una matriz de 10x10 e introduzca los valores de las tablas de multiplicar del 1 al 10
      * (cada tabla en una fila). Luego mostrará la matriz por pantalla.
      */
-    public static void matrices2() {}
+    public static void matrices2() {
+        int[][] tablas = new int[10][10];
+
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                tablas[i][j] = (i + 1) * (j + 1);
+            }
+        }
+
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(tablas[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
 
     /**
      * Crea un programa que cree una matriz de tamaño 3x6 que almacene los números aleatorios
