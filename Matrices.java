@@ -50,7 +50,34 @@ public class Matrices {
      * Crea un programa que cree una matriz de tamaño 3x6 que almacene los números aleatorios
      * entre 1 y 20. Luego pedirá al usuario un valor y mostrará si ese valor está en la matriz o no
      */
-    public static void matrices3() {}
+    public static void matrices3() {
+        int[][] numeros = new int[3][6];
+        int valor;
+        boolean encontrado = false;
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 6; j++) {
+                numeros[i][j] = (int) (Math.random() * 20) + 1;
+            }
+        }
+
+        do {
+            valor = Lectura.leerEntero("Introduzca un valor a buscar entre 1 y 20: ");
+        } while (valor < 1 || valor > 20);
+
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (numeros[i][j] == valor) {
+                    encontrado = true;
+                    break;
+                }
+            }
+        }
+
+        if (encontrado) System.out.println("El número si está en la matriz");
+        else System.out.println("El número no ha sido encontrado.");
+    }
 
     /**
      * Crea un programa que cree una matriz del tamaño que quiera el usuario y que almacene números
