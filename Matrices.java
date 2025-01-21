@@ -84,7 +84,28 @@ public class Matrices {
      * aleatorios entre 5 y 30. Luego pedirá al usuario un valor y mostrará, si ese valor está en la matriz,
      * en qué posición está (número de fila y número de columna)
      */
-    public static void matrices4() {}
+    public static void matrices4() {
+        int columnas = Lectura.leerEntero("Introduzca una cantidad de columnas: "), filas = Lectura.leerEntero("Introduzca una cantidad de filas: "), valor;
+        int[][] matriz = new int[columnas][filas];
+
+        for (int i = 0; i < columnas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                matriz[i][j] = (int)(Math.random() * 26) + 5;
+            }
+        }
+
+        do {
+            valor = Lectura.leerEntero("Introduzca un valor a buscar: ");
+        } while (valor < 5 || valor > 30);
+
+        for (int i = 0; i < columnas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                if (matriz[i][j] == valor) {
+                    System.out.println("El valor ha sido encontrado en la columna: [" + i + "] y en la fila: [" + j + "].");
+                }
+            }
+        }
+    }
 
     /**
      * Hacer un programa que lea 4 notas de 5 alumnos, todas ellas entre 0 y 10. A continuación, para
