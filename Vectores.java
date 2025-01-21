@@ -1,3 +1,4 @@
+import lectura.Lectura;
 import java.util.Arrays;
 
 public class Vectores {
@@ -11,7 +12,7 @@ public class Vectores {
         int suma = 0;
 
         for (int i = 0;i < vector.length;i++){
-            vector[i] = Leer.leerEntero("Introduzca un número: ");
+            vector[i] = Lectura.leerEntero("Introduzca un número: ");
         }
         for (int i = 0; i < vector.length; i++) {
             System.out.println("El vector en la posición " + i + " és: " + vector[i]);
@@ -30,7 +31,7 @@ public class Vectores {
         int maximo, minimo;
 
         for (int i = 0; i < vector.length; i++) {
-            vector[i] = Leer.leerEntero("Introduzca un número: ");
+            vector[i] = Lectura.leerEntero("Introduzca un número: ");
         }
 
         maximo = vector[1];
@@ -58,7 +59,7 @@ public class Vectores {
         int sumPos = 0, sumNeg = 0;
 
         for (int i = 0; i < vector.length; i++) {
-            vector[i] = Leer.leerEntero("Introduzca un número: ");
+            vector[i] = Lectura.leerEntero("Introduzca un número: ");
         }
 
         for (int x : vector) {
@@ -105,7 +106,7 @@ public class Vectores {
         int suma = 0, media;
 
         for (int i = 0; i < vector.length; i++) {
-            vector[i] = Leer.leerEntero("Introduzca un número: ");
+            vector[i] = Lectura.leerEntero("Introduzca un número: ");
         }
 
         for (int j : vector) {
@@ -121,7 +122,7 @@ public class Vectores {
      * M en todas sus posiciones y lo muestre por pantalla.
      */
     public static void vector6() {
-        int n = Leer.leerEntero("Introduzca la longitud de la array: "), m = Leer.leerEntero("Introduzca otro valor numérico: ");
+        int n = Lectura.leerEntero("Introduzca la longitud de la array: "), m = Lectura.leerEntero("Introduzca otro valor numérico: ");
         int[] vector = new int[n];
 
         for (int i = 0; i < vector.length; i++) {
@@ -169,7 +170,7 @@ public class Vectores {
             System.out.println("B. Introducir un valor y posición.");
             System.out.println("C. Salir.");
 
-            opc = Leer.leerTexto("¿Qué quiere hacer? ").toUpperCase();
+            opc = Lectura.leerTexto("¿Qué quiere hacer? ").toUpperCase();
 
             if (opc.equals("A")) {
 
@@ -186,8 +187,8 @@ public class Vectores {
 
             } else if (opc.equals("B")) {
 
-                v = Leer.leerEntero("Introduce un valor: ");
-                p = Leer.leerEntero("Introduce una posición: ");
+                v = Lectura.leerEntero("Introduce un valor: ");
+                p = Lectura.leerEntero("Introduce una posición: ");
 
                 numeros[p] = v;
 
@@ -210,7 +211,7 @@ public class Vectores {
             numeros[i] = (int) numAleatorio;
         }
 
-        n = Leer.leerEntero("Introduzca un número del 1 al 10 para buscarlo por la array: ");
+        n = Lectura.leerEntero("Introduzca un número del 1 al 10 para buscarlo por la array: ");
 
         for (int i = 0; i < numeros.length; i++) {
             if (n == numeros[i]) {
@@ -251,9 +252,9 @@ public class Vectores {
         int vi, d, n;
         int[] vector = new int[20];
 
-        vi = Leer.leerEntero("Introduzca el valor inicial: ");
-        d = Leer.leerEntero("Introduce el incremento por desplazamiento: ");
-        n = Leer.leerEntero("Introduce la cantidad de números a imprimir: ");
+        vi = Lectura.leerEntero("Introduzca el valor inicial: ");
+        d = Lectura.leerEntero("Introduce el incremento por desplazamiento: ");
+        n = Lectura.leerEntero("Introduce la cantidad de números a imprimir: ");
 
         vector[0] = vi;
 
@@ -278,10 +279,10 @@ public class Vectores {
 
         System.out.println("Introduce las puntuaciones de los 8 usuarios.");
         for (int i = 0; i < puntuaciones.length; i++) {
-            puntuaciones[i] = Leer.leerEntero("Introduce la posición del jugador " + (i + 1) + ": ");
+            puntuaciones[i] = Lectura.leerEntero("Introduce la posición del jugador " + (i + 1) + ": ");
 
             while (puntuaciones[i] < 1000 || puntuaciones[i] > 2800) {
-                puntuaciones[i] = Leer.leerEntero("Valor introducido no válido, prueba con otro: ");
+                puntuaciones[i] = Lectura.leerEntero("Valor introducido no válido, prueba con otro: ");
             }
         }
         Arrays.sort(puntuaciones);

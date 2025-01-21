@@ -1,0 +1,92 @@
+import lectura.*;
+
+public class Matrices {
+
+    /**
+     * Crea un programa que cree una matriz de tamaño 5x5 que almacene los números del 1 al 25 y
+     * luego muestre la matriz por pantalla.
+     */
+    public static void matrices1() {
+        int[][] matriz = new int[5][5];
+        int contador = 1;
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                matriz[i][j] = contador;
+                contador++;
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Crea un programa que cree una matriz de 10x10 e introduzca los valores de las tablas de multiplicar del 1 al 10
+     * (cada tabla en una fila). Luego mostrará la matriz por pantalla.
+     */
+    public static void matrices2() {}
+
+    /**
+     * Crea un programa que cree una matriz de tamaño 3x6 que almacene los números aleatorios
+     * entre 1 y 20. Luego pedirá al usuario un valor y mostrará si ese valor está en la matriz o no
+     */
+    public static void matrices3() {}
+
+    /**
+     * Crea un programa que cree una matriz del tamaño que quiera el usuario y que almacene números
+     * aleatorios entre 5 y 30. Luego pedirá al usuario un valor y mostrará, si ese valor está en la matriz,
+     * en qué posición está (número de fila y número de columna)
+     */
+    public static void matrices4() {}
+
+    /**
+     * Hacer un programa que lea 4 notas de 5 alumnos, todas ellas entre 0 y 10. A continuación, para
+     * cada alumno se calculará:
+     * - La nota más alta
+     * - La nota más baja
+     * - La nota media
+     * - Informar si ha habido algún 10 y/o algún 0
+     * Sabiendo la media total de las notas calcularemos cuántos alumnos tienen una nota inferior a la media
+     * y cuántos tienen una nota superior.
+     */
+    public static void matrices5() {}
+
+    /**
+     * Crear un programa para registrar sueldos de hombres y mujeres de una empresa y detectar si
+     * existe brecha salarial entre ambos. El programa pedirá por teclado la información de N personas
+     * distintas (valor también introducido por teclado). Para cada persona, pedirá su género (0 para
+     * varón y 1 para mujer) y su sueldo. Esta información debe guardarse en una única matriz. Luego
+     * se mostrará por pantalla el sueldo medio de cada género.
+     */
+    public static void matrices6() {}
+
+    /**
+     * Haz un programa que pida el número de expediente, nota y edad de 15 alumnos (con un único
+     * bucle). Posteriormente, que muestre en formato de tabla todos los datos. Después se pedirá por
+     * teclado un número de expediente y se mostrará por pantalla su edad y nota.
+     */
+    public static void matrices7() {}
+
+    /**
+     * En un centro meteorológico queremos guardar las temperaturas de un mes (30 días), medidas 4
+     * veces al día (a las 0, 6, 12 y 18 horas de cada día).
+     * Para lo cual se guardará la información en una matriz. El programa pedirá el día del cual queremos
+     * introducir las temperaturas y, a continuación pedirá las 4 temperaturas correspondientes. Este proceso
+     * irá repitiéndose hasta que introducimos el día 0.
+     * Posteriormente, el programa presentará un menú para que el usuario haga un análisis de los datos
+     * recolectados:
+     * 1. Temperatura media de un día pedido por teclado.
+     * 2. Temperatura media de una hora pedida por teclado.
+     * 3. Temperatura media del mes.
+     * 4. Mostrar temperatura en un día y hora en concreto.
+     * 5. Mostrar la mínima y la máxima de un día.
+     * 6. Cambiar una temperatura.
+     * 7. Salir.
+     */
+    public static void matrices8() {}
+}

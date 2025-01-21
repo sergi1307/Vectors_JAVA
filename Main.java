@@ -1,3 +1,5 @@
+import lectura.Lectura;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -16,8 +18,18 @@ public class Main {
             System.out.println("8 - Vectores 8");
             System.out.println("9 - Vectores 9");
             System.out.println("10 - Vectores 10");
+            System.out.println("11 - Vectores 11");
+            System.out.println("12 - Vectores 12");
+            System.out.println("13 - Matrices 13");
+            System.out.println("14 - Matrices 14");
+            System.out.println("15 - Matrices 15");
+            System.out.println("16 - Matrices 16");
+            System.out.println("17 - Matrices 17");
+            System.out.println("18 - Matrices 18");
+            System.out.println("19 - Matrices 19");
+            System.out.println("20 - Matrices 20");
 
-            opc = Leer.leerEntero("Que quiere hacer? ");
+            opc = Lectura.leerEntero("Que quiere hacer? ");
 
             if (opc == 1) {
                 Vectores.vector1();
@@ -43,6 +55,22 @@ public class Main {
                 Vectores.vector11();
             } else if(opc == 12) {
                 Vectores.vector12();
+            } else if(opc == 13) {
+                Matrices.matrices1();
+            } else if(opc == 14) {
+                Matrices.matrices2();
+            } else if(opc == 15) {
+                Matrices.matrices3();
+            } else if(opc == 16) {
+                Matrices.matrices4();
+            } else if(opc == 17) {
+                Matrices.matrices5();
+            } else if(opc == 18) {
+                Matrices.matrices6();
+            } else if(opc == 19) {
+                Matrices.matrices7();
+            } else if(opc == 20) {
+                Matrices.matrices8();
             }
         } while (opc != 0);
 
