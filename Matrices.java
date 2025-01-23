@@ -86,9 +86,9 @@ public class Matrices {
      */
     public static void matrices4() {
         int columnas = Lectura.leerEntero("Introduzca una cantidad de columnas: "), filas = Lectura.leerEntero("Introduzca una cantidad de filas: "), valor;
-        int[][] matriz = new int[columnas][filas];
+        int[][] matriz = new int[filas][columnas];
 
-        for (int i = 0; i < columnas; i++) {
+        for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 matriz[i][j] = (int)(Math.random() * 26) + 5;
             }
@@ -98,7 +98,7 @@ public class Matrices {
             valor = Lectura.leerEntero("Introduzca un valor a buscar: ");
         } while (valor < 5 || valor > 30);
 
-        for (int i = 0; i < columnas; i++) {
+        for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 if (matriz[i][j] == valor) {
                     System.out.println("El valor ha sido encontrado en la columna: [" + i + "] y en la fila: [" + j + "].");
@@ -120,7 +120,7 @@ public class Matrices {
     public static void matrices5() {
         int[][] notas = new int[5][4];
         int[] media = new int[5];
-        int nota, maxima = 0, minima = 10;
+        int nota, maxima = 0, minima = 10, suma= 0;
         boolean diez, cero;
 
         for (int i = 0; i < 5; i++) {
@@ -134,11 +134,12 @@ public class Matrices {
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 4; j++) {
+                suma = suma + notas[i][j];
                 if (notas[i][j] > maxima) {
                     maxima = notas[i][j];
                 }
                 if (notas[i][j] < minima) {
-                    maxima = notas[i][j];
+                    minima = notas[i][j];
                 }
             }
             System.out.println("La nota máxima del alumno: " + (i + 1) + " es: " + maxima + ".");
