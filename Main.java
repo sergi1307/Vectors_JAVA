@@ -20,14 +20,14 @@ public class Main {
             System.out.println("10 - Vectores 10");
             System.out.println("11 - Vectores 11");
             System.out.println("12 - Vectores 12");
-            System.out.println("13 - Matrices 13");
-            System.out.println("14 - Matrices 14");
-            System.out.println("15 - Matrices 15");
-            System.out.println("16 - Matrices 16");
-            System.out.println("17 - Matrices 17");
-            System.out.println("18 - Matrices 18");
-            System.out.println("19 - Matrices 19");
-            System.out.println("20 - Matrices 20");
+            System.out.println("13 - Matrices 1");
+            System.out.println("14 - Matrices 2");
+            System.out.println("15 - Matrices 3");
+            System.out.println("16 - Matrices 4");
+            System.out.println("17 - Matrices 5");
+            System.out.println("18 - Matrices 6");
+            System.out.println("19 - Matrices 7");
+            System.out.println("20 - Matrices 8");
 
             opc = Lectura.leerEntero("Que quiere hacer? ");
 
