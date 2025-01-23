@@ -119,20 +119,27 @@ public class Matrices {
      */
     public static void matrices5() {
         int[][] notas = new int[5][4];
-        int[] media = new int[5];
-        int nota, maxima = 0, minima = 10, suma= 0;
+        double[] media = new double[5];
+        int nota, maxima, minima, suma= 0;
+        int alumnosencima = 0, alumnosdebajo = 0;
         boolean diez, cero;
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 4; j++) {
                 do {
                     nota = Lectura.leerEntero("Introduzca la nota nº: " + (j + 1) + " al alumno nº " + (i + 1) + ": ");
-                    notas[i][j] = nota;
                 } while (nota < 0 || nota > 10);
+                notas[i][j] = nota;
             }
         }
 
         for (int i = 0; i < 5; i++) {
+            maxima = 0;
+            minima = 10;
+            suma = 0;
+            diez = false;
+            cero = false;
+
             for (int j = 0; j < 4; j++) {
                 suma = suma + notas[i][j];
                 if (notas[i][j] > maxima) {
@@ -141,10 +148,39 @@ public class Matrices {
                 if (notas[i][j] < minima) {
                     minima = notas[i][j];
                 }
+                if (notas[i][j] == 10) {
+                    diez = true;
+                } else if (notas[i][j] == 0) {
+                    cero = true;
+                }
             }
-            System.out.println("La nota máxima del alumno: " + (i + 1) + " es: " + maxima + ".");
-            System.out.println("La nota mínima del alumno: " + (i + 1) + " es: " + minima + ".");
+            media[i] = suma / 4.0;
+
+            System.out.println("Alumno " + (i + 1) + ":");
+            System.out.println("- Nota máxima: " + maxima + ".");
+            System.out.println("- Nota mínima: " + minima + ".");
+            System.out.println("- Nota media: " + media[i] + ".");
+            System.out.println("- Algún 10: " + diez + ".");
+            System.out.println("- Algún 0: " + cero + ".");
         }
+
+        double mediaTotal = 0;
+        for (double j : media) {
+            mediaTotal += j;
+        }
+        mediaTotal /= 5;
+
+        for (double x: media) {
+            if (x >= mediaTotal) {
+                alumnosencima++;
+            } else {
+                alumnosdebajo++;
+            }
+        }
+
+        System.out.println("Media total de las notas: " + mediaTotal + ".");
+        System.out.println("Alumnos por encima de la media: " + alumnosencima + ".");
+        System.out.println("Alumnos por debajo de la media: " + alumnosdebajo + ".");
     }
 
     /**
