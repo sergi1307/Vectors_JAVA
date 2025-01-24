@@ -288,5 +288,156 @@ public class Matrices {
      * 6. Cambiar una temperatura.
      * 7. Salir.
      */
-    public static void matrices8 () {}
+    public static void matrices8 () {
+        int[][] clima = new int[30][4];
+        int dia, opc, hora, temp, max, min;
+        double medDia, sumTemp = 0, medHora, medMes;
+        String continuar;
+
+        do {
+            do {
+                dia = Lectura.leerEntero("Introduzca el día al que quiere introducir temperaturas: ");
+            } while (dia < 1 ||dia > 30);
+
+            dia = dia - 1;
+            clima[dia][0] = Lectura.leerEntero("Introduzca la temperatura a las 0 de la noche: ");
+            clima[dia][1] = Lectura.leerEntero("Introduzca la temperatura a las 6 de la mañana: ");
+            clima[dia][2] = Lectura.leerEntero("Introduzca la temperatura a las 12 del mediodía: ");
+            clima[dia][3] = Lectura.leerEntero("Introduzca la temperatura a las 18 de la tarde: ");
+
+            do {
+                continuar = Lectura.leerTexto("Quiere continuar introduciendo días? (s/n): ").toLowerCase();
+            } while (!continuar.equals("s") && !continuar.equals("n"));
+
+        } while (!continuar.equals("n"));
+
+        do {
+            System.out.println("1. Temperatura media de un día.");
+            System.out.println("2. Temperatura media de una hora.");
+            System.out.println("3. Temperatura media del mes.");
+            System.out.println("4. Mostrar temperatura de un día y de una hora.");
+            System.out.println("5. Mostrar la mínima y la máxima de un día.");
+            System.out.println("6. Cambiar temperatura.");
+            System.out.println("7. Salir.");
+
+            opc = Lectura.leerEntero("Introduzca que desea hacer: ");
+
+            if (opc == 1) {
+
+                dia = Lectura.leerEntero("Introduzca de que día quiere calcular la media: ");
+                sumTemp = 0;
+
+                for (int i = 0; i < 4; i++) {
+                    sumTemp = sumTemp + clima[dia - 1][i];
+                }
+
+                medDia = sumTemp / 4;
+                System.out.println("La temperatura media del día " + dia + " del mes es: " + medDia);
+
+            } else if (opc == 2) {
+
+                sumTemp = 0;
+                do {
+                    hora = Lectura.leerEntero("Introduzca la hora de la que desea saber la media: ");
+                } while (hora != 0 && hora != 6 && hora != 12 && hora != 18);
+
+                if (hora == 0) {
+                    for (int i = 0; i < 30; i++) {
+                        sumTemp = sumTemp + clima[i][0];
+                    }
+                } else if (hora == 6) {
+                    for (int i = 0; i < 30; i++) {
+                        sumTemp = sumTemp + clima[i][1];
+                    }
+                } else if (hora == 12) {
+                    for (int i = 0; i < 30; i++) {
+                        sumTemp = sumTemp + clima[i][2];
+                    }
+                } else {
+                    for (int i = 0; i < 30; i++) {
+                        sumTemp = sumTemp + clima[i][3];
+                    }
+                }
+
+                medHora = sumTemp / 4;
+                System.out.println("La media de temperatura a las: " + hora + " es: " + medHora + ".");
+
+            } else if (opc == 3) {
+
+                sumTemp = 0;
+
+                for (int i = 0; i < 15; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        sumTemp += clima[i][j];
+                    }
+                }
+                medMes = sumTemp / (30.0 * 4);
+                System.out.println("La media de temperatura del mes es: " + medMes + ".");
+
+            } else if (opc == 4) {
+
+                do {
+                    dia = Lectura.leerEntero("Introduzca el día a consultar: ");
+                    hora = Lectura.leerEntero("Introduzca la hora a consultar: ");
+                } while (dia < 1 || dia > 30 && hora != 0 && hora != 6 && hora != 12 && hora != 18);
+
+                dia = dia - 1;
+
+                if (hora == 0) {
+                    temp = clima[dia][0];
+                } else if (hora == 6) {
+                    temp = clima[dia][1];
+                } else if (hora == 12) {
+                    temp = clima[dia][2];
+                } else {
+                    temp = clima[dia][3];
+                }
+
+                System.out.println("La temperatura del día: " + dia + " a las: " + hora + " era: " + temp + ".");
+
+            } else if (opc == 5) {
+
+                max = Integer.MIN_VALUE;
+                min = Integer.MAX_VALUE;
+
+                do {
+                    dia = Lectura.leerEntero("Introduzca el día que quiere consultar la máxima y la mínima: ");
+                } while (dia < 1 || dia > 30);
+
+                dia = dia - 1;
+
+                for (int i = 0; i < 4; i++) {
+                        if (clima[dia][i] > max) {
+                            max = clima[dia][i];
+                        }
+                        if (clima[dia][i] < min) {
+                            min = clima[dia][i];
+                        }
+                }
+
+                System.out.println("La temperatura máxima del día " + dia + " es: " + max + ".");
+                System.out.println("La temperatura mínima del día " + dia + " es: " + min + ".");
+
+            } else if (opc == 6) {
+
+                do {
+                    dia = Lectura.leerEntero("Introduzca el día que quiere cambiar la temperatura: ");
+                } while (dia < 1 || dia > 30);
+
+                dia = dia - 1;
+
+                clima[dia][0] = Lectura.leerEntero("Introduzca la temperatura a las 0: ");
+                clima[dia][1] = Lectura.leerEntero("Introduzca la temperatura a las 6: ");
+                clima[dia][2] = Lectura.leerEntero("Introduzca la temperatura a las 12: ");
+                clima[dia][3] = Lectura.leerEntero("Introduzca la temperatura a las 18: ");
+
+                System.out.println("Datos introducidos correctamente.");
+
+            } else if (opc == 7) {
+                System.out.println("Gracias por utilizar nuestro programa de climatología.");
+            } else {
+                System.out.println("Introduzca una opción válida por favor.");
+            }
+        } while (opc != 7);
+    }
 }
