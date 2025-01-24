@@ -1,6 +1,7 @@
 import lectura.*;
 
 import javax.swing.plaf.basic.BasicFileChooserUI;
+import java.util.Arrays;
 
 public class Matrices {
 
@@ -246,29 +247,34 @@ public class Matrices {
      * teclado un número de expediente y se mostrará por pantalla su edad y nota.
      */
     public static void matrices7 () {
-        int[][] alumnos = new int[15][4];
+        String[][] alumnos = new String[5][3];
 
-        for (int i = 0; i < 15; i++) {
-            int expediente = Lectura.leerEntero("Introduzca el expediente del alumno " + (i + 1) +": ");
-            int nota = Lectura.leerEntero("Introduzca la nota del alumno " + (i + 1) +": ");
-            int edad = Lectura.leerEntero("Introduzca la edad del alumno " + (i + 1) +": ");
+        for (int i = 0; i < 5; i++) {
+            String respuesta = Lectura.leerTexto("Introduzca el expediente, la nota y la edad del alumno " + ( i + 1) + ": ");
+            String[] respuestas = respuesta.split(" ");
 
-            alumnos[i][0] = i;
-            alumnos[i][1] = expediente;
-            alumnos[i][2] = nota;
-            alumnos[i][3] = edad;
+            String expediente = respuestas[0];
+            int nota = Integer.parseInt(respuestas[1]);
+            int edad = Integer.parseInt(respuestas[2]);
+
+            alumnos[i][0] = expediente;
+            alumnos[i][1] = String.valueOf(nota);
+            alumnos[i][2] = String.valueOf(edad);
         }
 
-        System.out.println("NÚMERO \t EXPEDIENTE \t NOTA \t EDAD");
-        System.out.println("------ \t ---------- \t ---- \t ----");
+        System.out.println("EXPEDIENTE \t NOTA \t EDAD");
+        System.out.println("---------- \t ---- \t ----");
 
-        for (int i = 0; i < 15; i++) {
-            String numeroAlumno = String.format("%02d", alumnos[i][0]);
-            String expediente = String.format("%03d", alumnos[i][0]);
-            String nota = String.format("%01d", alumnos[i][2]);
-            String edad = String.format("%01d", alumnos[i][3]);
+        for (int i = 0; i < 5; i++) {
+            System.out.println(alumnos[i][0] + "\t\t\t   " + alumnos[i][1] + "\t  " + alumnos[i][2]);
+        }
 
-            System.out.printf("%s \t\t %s \t\t %s \t\t %s%n", numeroAlumno, expediente, nota, edad);
+        String expediente = Lectura.leerTexto("Introduzca el número de expediente: ");
+
+        for (int i = 0; i < 5; i++) {
+            if (alumnos[i][0].equals(expediente)) {
+                System.out.println("El alumno con expediente: " + alumnos[i][0] + " tiene una nota de " + alumnos[i][1] + " y una edad de: " + alumnos[i][2] + ".");
+            }
         }
     }
 
