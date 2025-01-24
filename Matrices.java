@@ -1,5 +1,7 @@
 import lectura.*;
 
+import javax.swing.plaf.basic.BasicFileChooserUI;
+
 public class Matrices {
 
     /**
@@ -238,30 +240,53 @@ public class Matrices {
 
     }
 
-        /**
-         * Haz un programa que pida el número de expediente, nota y edad de 15 alumnos (con un único
-         * bucle). Posteriormente, que muestre en formato de tabla todos los datos. Después se pedirá por
-         * teclado un número de expediente y se mostrará por pantalla su edad y nota.
-         */
-        public static void matrices7 () {
+    /**
+     * Haz un programa que pida el número de expediente, nota y edad de 15 alumnos (con un único
+     * bucle). Posteriormente, que muestre en formato de tabla todos los datos. Después se pedirá por
+     * teclado un número de expediente y se mostrará por pantalla su edad y nota.
+     */
+    public static void matrices7 () {
+        int[][] alumnos = new int[15][4];
+
+        for (int i = 0; i < 15; i++) {
+            int expediente = Lectura.leerEntero("Introduzca el expediente del alumno " + (i + 1) +": ");
+            int nota = Lectura.leerEntero("Introduzca la nota del alumno " + (i + 1) +": ");
+            int edad = Lectura.leerEntero("Introduzca la edad del alumno " + (i + 1) +": ");
+
+            alumnos[i][0] = i;
+            alumnos[i][1] = expediente;
+            alumnos[i][2] = nota;
+            alumnos[i][3] = edad;
         }
 
-        /**
-         * En un centro meteorológico queremos guardar las temperaturas de un mes (30 días), medidas 4
-         * veces al día (a las 0, 6, 12 y 18 horas de cada día).
-         * Para lo cual se guardará la información en una matriz. El programa pedirá el día del cual queremos
-         * introducir las temperaturas y, a continuación pedirá las 4 temperaturas correspondientes. Este proceso
-         * irá repitiéndose hasta que introducimos el día 0.
-         * Posteriormente, el programa presentará un menú para que el usuario haga un análisis de los datos
-         * recolectados:
-         * 1. Temperatura media de un día pedido por teclado.
-         * 2. Temperatura media de una hora pedida por teclado.
-         * 3. Temperatura media del mes.
-         * 4. Mostrar temperatura en un día y hora en concreto.
-         * 5. Mostrar la mínima y la máxima de un día.
-         * 6. Cambiar una temperatura.
-         * 7. Salir.
-         */
-        public static void matrices8 () {
+        System.out.println("NÚMERO \t EXPEDIENTE \t NOTA \t EDAD");
+        System.out.println("------ \t ---------- \t ---- \t ----");
+
+        for (int i = 0; i < 15; i++) {
+            String numeroAlumno = String.format("%02d", alumnos[i][0]);
+            String expediente = String.format("%03d", alumnos[i][0]);
+            String nota = String.format("%01d", alumnos[i][2]);
+            String edad = String.format("%01d", alumnos[i][3]);
+
+            System.out.printf("%s \t\t %s \t\t %s \t\t %s%n", numeroAlumno, expediente, nota, edad);
         }
     }
+
+    /**
+     * En un centro meteorológico queremos guardar las temperaturas de un mes (30 días), medidas 4
+     * veces al día (a las 0, 6, 12 y 18 horas de cada día).
+     * Para lo cual se guardará la información en una matriz. El programa pedirá el día del cual queremos
+     * introducir las temperaturas y, a continuación pedirá las 4 temperaturas correspondientes. Este proceso
+     * irá repitiéndose hasta que introducimos el día 0.
+     * Posteriormente, el programa presentará un menú para que el usuario haga un análisis de los datos
+     * recolectados:
+     * 1. Temperatura media de un día pedido por teclado.
+     * 2. Temperatura media de una hora pedida por teclado.
+     * 3. Temperatura media del mes.
+     * 4. Mostrar temperatura en un día y hora en concreto.
+     * 5. Mostrar la mínima y la máxima de un día.
+     * 6. Cambiar una temperatura.
+     * 7. Salir.
+     */
+    public static void matrices8 () {}
+}
