@@ -129,7 +129,9 @@ public class Vectores {
             vector[i] = m;
         }
 
-        System.out.println(vector);
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i] + " ");
+        }
     }
 
     /**
